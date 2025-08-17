@@ -20,9 +20,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
+          # IMPORTANT: no cache line here, because we have no lock file
 
-      # Use npm install (does NOT require a lock file)
       - name: Install dependencies
         run: npm install --no-audit --no-fund
 
@@ -32,7 +31,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'dist'
+          path: dist
 
   deploy:
     needs: build
