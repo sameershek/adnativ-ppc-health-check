@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* simple brand chips + focus styling */
+:root {
+  --ring: 0 0 0 3px rgba(99,102,241,.35);
+}
+*:focus-visible { outline: none; box-shadow: var(--ring); border-radius: 8px; }
+
+.btn {
+  @apply inline-flex items-center gap-2 rounded-2xl px-4 py-2 text-sm font-medium transition;
+  @apply bg-indigo-600 text-white hover:bg-indigo-700 focus-visible:outline-none;
+}
+.btn-secondary {
+  @apply bg-slate-200 text-slate-900 hover:bg-slate-300 dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700;
+}
+.input {
+  @apply w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm dark:border-slate-700 dark:bg-slate-900;
+}
+.slider { @apply w-full; }
+.card { @apply rounded-2xl border border-slate-200 p-4 dark:border-slate-800 bg-white dark:bg-slate-900; }
